@@ -2,7 +2,7 @@
 //  Pickable.swift
 //  NoMoreGatcha
 //
-//  Created by LinePlus on 2017. 3. 17..
+//  Created by Helloworld Park on 2017. 3. 17..
 //  Copyright © 2017년 Helloworld Park. All rights reserved.
 //
 
@@ -11,15 +11,17 @@ import Foundation
 public struct Item : Hashable
 {
     public var name: String
+    private var _hash: Int
     public var hashValue: Int {
         get {
-            return self.name.hashValue
+            return _hash
         }
     }
     
     public init(name: String)
     {
         self.name = name
+        self._hash = name.hashValue
     }
     
     public static func ==(lhs: Item, rhs: Item) -> Bool

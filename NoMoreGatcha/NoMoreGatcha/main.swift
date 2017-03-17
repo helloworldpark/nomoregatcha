@@ -2,7 +2,7 @@
 //  main.swift
 //  NoMoreGatcha
 //
-//  Created by LinePlus on 2017. 3. 17..
+//  Created by Helloworld Park on 2017. 3. 17..
 //  Copyright © 2017년 Helloworld Park. All rights reserved.
 //
 
