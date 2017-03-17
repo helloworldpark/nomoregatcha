@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F81B8631E7C405B00F3253E /* IdealGatcha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F81B8621E7C405B00F3253E /* IdealGatcha.swift */; };
 		4FBB27A01E7C2038006FC38B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBB279F1E7C2038006FC38B /* main.swift */; };
 		4FBB27AF1E7C2093006FC38B /* ERCollectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBB27A81E7C2093006FC38B /* ERCollectionHelper.swift */; };
 		4FBB27B01E7C2093006FC38B /* ERContinuous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBB27A91E7C2093006FC38B /* ERContinuous.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4F81B8621E7C405B00F3253E /* IdealGatcha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdealGatcha.swift; sourceTree = "<group>"; };
 		4FBB279C1E7C2038006FC38B /* NoMoreGatcha */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NoMoreGatcha; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FBB279F1E7C2038006FC38B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4FBB27A81E7C2093006FC38B /* ERCollectionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ERCollectionHelper.swift; path = Externals/EasyRandom/ERCollectionHelper.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				4FBB27A61E7C2040006FC38B /* Externals */,
 				4FBB279F1E7C2038006FC38B /* main.swift */,
 				4FBB27B61E7C2129006FC38B /* Gatcha.swift */,
+				4F81B8621E7C405B00F3253E /* IdealGatcha.swift */,
 				4FBB27B81E7C21C0006FC38B /* Item.swift */,
 			);
 			path = NoMoreGatcha;
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F81B8631E7C405B00F3253E /* IdealGatcha.swift in Sources */,
 				4FBB27B41E7C2093006FC38B /* ERMathStruct.swift in Sources */,
 				4FBB27B01E7C2093006FC38B /* ERContinuous.swift in Sources */,
 				4FBB27B11E7C2093006FC38B /* ERDiscrete.swift in Sources */,
@@ -302,6 +306,7 @@
 				4FBB27A51E7C2038006FC38B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
