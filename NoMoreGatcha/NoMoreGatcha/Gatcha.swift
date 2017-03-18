@@ -8,6 +8,25 @@
 
 import Foundation
 
+public struct Report
+{
+    public static let EMPTY = Report(items: -1, rounds: -1, min: 0, max: 0, mean: 0, stdev: -1)
+    
+    public let items: Int
+    public let rounds: Int
+    public let min: UInt64
+    public let max: UInt64
+    public let mean: Double
+    public let stdev: Double
+    
+    public func report()
+    {
+        print("Random Boxes \(self.items) Rounds \(self.rounds)")
+        print("Min \(self.min) Max \(self.max)")
+        print("Mean \(self.mean) Stdev \(self.stdev)")
+    }
+}
+
 public class Gatcha
 {
     public var name: String
@@ -31,13 +50,13 @@ public class Gatcha
         self.init(items: Item.convenientItems(count: odds.count), odds: odds)
     }
     
-    public func run(forRounds r: Int, maximumPick p: UInt64, reportAsFile: Bool = false)
+    public func run(forRounds r: Int, maximumPick p: UInt64, reportAsFile: Bool = false) -> Report
     {
         guard r > 0 else {
-            return
+            return Report.EMPTY
         }
         guard p > 0 else {
-            return
+            return Report.EMPTY
         }
         
         var pickArr = [UInt64]()
@@ -53,10 +72,10 @@ public class Gatcha
             pickArr.append(picks)
         }
         
-        self.report(withData: pickArr, saveAsFile: reportAsFile)
+        return self.report(withData: pickArr, saveAsFile: reportAsFile)
     }
     
-    private func report(withData data: [UInt64], saveAsFile: Bool)
+    private func report(withData data: [UInt64], saveAsFile: Bool) -> Report
     {
         let mean = data.reduce(0.0) { (old, fresh) -> Double in
             return old + Double(fresh)
@@ -68,9 +87,7 @@ public class Gatcha
         let maxPick = data.max()!
         let minPick = data.min()!
         
-        print("Random Boxes: \(items.count) Rounds: \(data.count)")
-        print("Mean: \(mean) Stdev: \(stdev)")
-        print("Min: \(minPick) Max: \(maxPick)")
+        let report = Report(items: items.count, rounds: data.count, min: minPick, max: maxPick, mean: mean, stdev: stdev)
         
         if saveAsFile == true {
             let path = Gatcha.documentsDirectory().appendingPathComponent("\(self.name).csv")
@@ -78,12 +95,12 @@ public class Gatcha
             let txtToWrite = "Picks\n".appending(joined)
             do {
                 try txtToWrite.write(to: path, atomically: false, encoding: String.Encoding.utf8)
+                print("Saved at \(path)")
             } catch {
                 print("Saving failed")
-                return
             }
-            print("Saved at \(path)")
         }
+        return report
     }
     
     private static func documentsDirectory() -> URL

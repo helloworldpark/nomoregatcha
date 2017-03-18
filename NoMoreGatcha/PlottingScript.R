@@ -7,7 +7,7 @@ library("dplyr")
 
 # Loading Data
 
-ntag <- rep(1:30, each=10000)
+ntag <- rep(as.character(1:30), each=10000)
 gatcha.u <- data.frame(Picks=rep(0, times=10000*30), Tag=ntag)
 
 for(i in 1:30)
@@ -19,9 +19,13 @@ for(i in 1:30)
 gatcha.ideal <- read_csv(paste("~/Documents/gatcha_ideal.csv", sep=""))
 
 # Draw Histogram
-items.toDraw <- c(10,20,30)
+items.toDraw <- as.character(c(10,20,30))
 ggplot(data=filter(gatcha.u, Tag == items.toDraw)) + 
-  geom_density(aes(x = Picks, colour = Items))
+  geom_density(aes(x = Picks, fill = Tag)) + 
+  labs(x = "Picks for completing a n-item set",
+       y = "Density") + 
+  scale_fill_manual(name=" No. of \n Items(n)",
+                    values=c("10" = "#deebf775", "20" = "#9ecae175", "30" = "#3182bd75"))
 
 tt <- select(gatcha.u, Picks, Tag) %>% 
   group_by(Tag) %>% 

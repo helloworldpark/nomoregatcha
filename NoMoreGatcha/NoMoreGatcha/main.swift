@@ -31,7 +31,9 @@ for oddCount in (1...12).reversed()
     let rareProbability = Double(oddCount)/100.0
     let test = Gatcha(odds: Gatcha.rareDistribution(count: 8, rare: rareProbability))
     test.name = "gatcha_rare_\(rareProbability)"
-    test.run(forRounds: rounds, maximumPick: maximumPick, reportAsFile: false)
+    print("Test Name \(test.name)")
+    let report = test.run(forRounds: rounds, maximumPick: maximumPick, reportAsFile: false)
+    print("Mean \(report.mean)")
     print("----------------------------")
 }
 
