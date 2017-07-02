@@ -16,12 +16,12 @@ let idealGatcha = IdealGatcha(N: 30)
 print("Experiment for uniform distribution")
 for itemCount in 1...30
 {
-//    print("----------------------------")
+    print("----------------------------")
     print("Ideal Gatcha Size: \(itemCount) Mean: \(idealGatcha.mean(itemCount))")
     let test = Gatcha(odds: Gatcha.uniformDistribution(count: itemCount))
     test.name = "gatcha_uniform_\(itemCount)"
 //    test.run(forRounds: rounds, maximumPick: maximumPick, reportAsFile: false)
-//    print("----------------------------")
+    print("----------------------------")
 }
 
 print("Experiment for rare distribution with 8 items, varying probability")
