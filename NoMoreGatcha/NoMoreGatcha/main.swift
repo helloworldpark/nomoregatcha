@@ -21,7 +21,7 @@ for itemCount in 1...30
     let test = Gatcha(odds: Gatcha.uniformDistribution(count: itemCount))
     test.name = "gatcha_uniform_\(itemCount)"
 //    test.run(forRounds: rounds, maximumPick: maximumPick, reportAsFile: false)
-    print("----------------------------")
+    print("-----------Hi Jo!-------------")
 }
 
 print("Experiment for rare distribution with 8 items, varying probability")
