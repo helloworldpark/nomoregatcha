@@ -22,6 +22,7 @@ for itemCount in 1...30
     test.name = "gatcha_uniform_\(itemCount)"
 //    test.run(forRounds: rounds, maximumPick: maximumPick, reportAsFile: false)
     print("----------------------------")
+    print("Testing Branch")
 }
 
 print("Experiment for rare distribution with 8 items, varying probability")
